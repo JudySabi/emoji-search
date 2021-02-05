@@ -17,7 +17,6 @@ const Search = () => {
     <div className="container">
       <div className="search">
         <h1>Emoji Search</h1>
-        {/* c'est sur que c'est le onChange qui va me changer le state et pouvoir m'afficher les keywords qui correspondent aux lettres misent dans l'input */}
         <input
           type="text"
           placeholder="what emoji are you looking for ?"
@@ -27,6 +26,7 @@ const Search = () => {
 
       {data.slice(0, 12).map((elem, index) => {
         console.log(elem.keywords);
+        // je stocke ici dans le onSearch l'entrée de l'utilisateur via un indexOf qui va lui, regarder dans mon tableau d'objet les chaines des caractères des keywords
         const onSearch = elem.keywords.indexOf(search);
         return (
           // si l'input est égale au keywords de l'objet alors tu me l'affiche
